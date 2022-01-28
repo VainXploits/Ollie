@@ -2,6 +2,7 @@
 
 echo "Welcome, to Ollie, the revshells CLI!"
 echo "Twitter: @0dayCTF, @VainXploits & @elbee_ez"
+echo "Link to the original web version by @0dayCTF: https://revshells.com"
 
 #Types of Payloads
 
