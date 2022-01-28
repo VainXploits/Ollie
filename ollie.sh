@@ -5,8 +5,8 @@ echo "Twitter: @0dayCTF, @VainXploits & @elbee_ez"
 
 #Types of Payloads
 
-echo "--------------------------------------"
-echo "IMPORTANT NOTE: This program is case sensitive, please enter the exact text you see, in the available payloads section within the PAYLOAD field! please add a '%20' if there are spaces between words in the payload. Example (PAYLOAD: Bash&20-i)"
+#echo "--------------------------------------"
+#echo "IMPORTANT NOTE: This program is case sensitive, please enter the exact text you see, in the available payloads section within the PAYLOAD field! please add a '%20' if there are spaces between words in the payload. Example (PAYLOAD: Bash&20-i)"
 
 #Payloads Available
 echo "--------------------------------------"
