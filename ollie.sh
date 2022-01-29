@@ -2,7 +2,6 @@
 
 echo "Welcome, to Ollie, the revshells CLI!"
 echo "Twitter: @0dayCTF, @VainXploits & @elbee_ez"
-echo "Link to the original web version by @0dayCTF: https://revshells.com"
 
 #Types of Payloads
 
@@ -188,10 +187,10 @@ read -p "PORT: " PORT
 
 read -p "Do you want to output to a file? (Y/N): " OUTPUT
 
-#if [[ $OUTPUT -eq "Y" ]]
-#then
-#    read -p "What do you want the name of the file to be? " FILENAME
-#    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n > $FILENAME
-#else
- #   curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n
-#fi
+if [[ $OUTPUT == "Y" ]]
+then
+    read -p "What do you want the name of the file to be? " FILENAME
+    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n > $FILENAME
+else
+    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n
+fi
